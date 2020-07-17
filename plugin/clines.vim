@@ -49,7 +49,7 @@ func! SetTabline(...)
         if bufexists(i) && buflisted(i)
             let &tabline .= '%' . i . '@Clicktab@'
             let &tabline .= i == bufnr('%') ? ' %3* ' : ' %2* '
-            let name = (len(fnamemodify(bufname(i), ':t')) ? fnamemodify(bufname(i), ':t') : '[未命名]') . (getbufvar(i, '&mod')?'+':'')
+            let name = (len(fnamemodify(bufname(i), ':t')) ? fnamemodify(bufname(i), ':t') : '[未命名]') . (getbufvar(i, '&mod')?'*':'')
             let &tabline .=  name . ' %*%X'
         endif
         let i += 1
